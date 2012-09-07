@@ -12,7 +12,7 @@ defined('_JEXEC') or die('Restricted access');
 
 Cachingcron::load('CachingcronViewBase','views.base');
 
-class CachingcronViewItems extends CachingcronViewBase 
+class CachingcronViewLinks extends CachingcronViewBase 
 {
 	
 	function _defaultToolbar()

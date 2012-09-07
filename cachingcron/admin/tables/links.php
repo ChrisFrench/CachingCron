@@ -11,9 +11,8 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 
-Cachingcron::load('CachingcronTable','tables.base');
 
-class CachingcronTableItems extends CachingcronTable 
+class CachingcronTableLinks extends DSCTable 
 {
 
 	function CachingcronTableItems( &$db ) 

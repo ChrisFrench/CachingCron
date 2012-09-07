@@ -1,65 +1,67 @@
 <?php
 /**
-* @version		0.1.0
 * @package		Cachingcron
-* @copyright	Copyright (C) 2011 DT Design Inc. All rights reserved.
+* @copyright	Copyright (C) 2009 DT Design Inc. All rights reserved.
 * @license		GNU GPLv2 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
 * @link 		http://www.dioscouri.com
 */
 
+
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
+
 class Cachingcron extends DSC
 {
-    protected $_name = 'cachingcron';
-    static $_version 		= '1.0';
-    static $_build          = 'r100';
-    static $_versiontype    = 'community';
-    static $_copyrightyear 	= '2011';
-    static $_min_php		= '5.2';
+	protected $_name = 'cachingcron';	
+	protected $_version 		= '1.0';
+    protected $_build          = 'r100';
+    protected $_versiontype    = 'community';
+    protected $_copyrightyear 	= '2012';
+    protected $_min_php		= '5.3';
 
-    // View Options
-    var $show_linkback						= '1';
-    var $include_site_css                   = '1';
-    var $amigosid                           = '';
-    var $page_tooltip_dashboard_disabled	= '0';
-    var $page_tooltip_config_disabled		= '0';
-    var $page_tooltip_tools_disabled		= '0';
-    
-    /**
-     * Returns the query
-     * @return string The query to be used to retrieve the rows from the database
-     */
-    public function _buildQuery()
-    {
-        $query = "SELECT * FROM #__cachingcron_config";
-        return $query;
-    }
-    
-    /**
-     * Get component config
-     *
-     * @acces	public
-     * @return	object
-     */
-    public static function getInstance()
-    {
-        static $instance;
-    
-        if (!is_object($instance)) {
-            $instance = new Cachingcron();
-        }
-    
-        return $instance;
-    }
-    
-    /**
+    public $show_linkback = '1';
+    public $amigosid = '';
+    public $page_tooltip_dashboard_disabled = '0';
+    public $page_tooltip_config_disabled = '0';
+    public $page_tooltip_tools_disabled = '0';
+	public $cachingcron_can_edit = '0';
+	/**
+	 * Returns the query
+	 * @return string The query to be used to retrieve the rows from the database
+	 */
+	function _buildQuery()
+	{
+		$query = "SELECT * FROM #__cachingcron_config";
+		return $query;
+	}
+
+	
+	
+
+	/**
+	 * Get component config
+	 *
+	 * @acces	public
+	 * @return	object
+	 */
+	public static function getInstance() {
+		static $instance;
+
+		if (!is_object($instance)) {
+			$instance = new Cachingcron();
+		}
+
+		return $instance;
+	}
+	
+	
+	 /**
      * Intelligently loads instances of classes in framework
      *
-     * Usage: $object = Cachingcron::getClass( 'CachingcronHelperCarts', 'helpers.carts' );
-     * Usage: $suffix = Cachingcron::getClass( 'CachingcronHelperCarts', 'helpers.carts' )->getSuffix();
-     * Usage: $categories = Cachingcron::getClass( 'CachingcronSelect', 'select' )->category( $selected );
+     * Usage: $object = Mediamanager::getClass( 'MediamanagerHelperCarts', 'helpers.carts' );
+     * Usage: $suffix = Mediamanager::getClass( 'MediamanagerHelperCarts', 'helpers.carts' )->getSuffix();
+     * Usage: $categories = Mediamanager::getClass( 'MediamanagerSelect', 'select' )->category( $selected );
      *
      * @param string $classname   The class name
      * @param string $filepath    The filepath ( dot notation )
@@ -83,5 +85,5 @@ class Cachingcron extends DSC
     {
         return parent::load( $classname, $filepath, $options  );
     }
+ 	
 }
-?>

@@ -9,7 +9,7 @@
 /** ensure this file is being included by a parent file */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class CachingcronControllerItems extends CachingcronController 
+class CachingcronControllerLinks extends CachingcronController 
 {
 	
 	
