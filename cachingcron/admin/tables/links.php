@@ -25,6 +25,19 @@ class CachingcronTableLinks extends DSCTable
 		parent::__construct( "#__{$name}_{$tbl_suffix}", $tbl_key, $db );	
 	}
 	
-	
+	function check( )
+	{
+		$nullDate = $this->_db->getNullDate( );
+		if ( empty( $this->datecreated ) || $this->datecreated == $nullDate )
+		{
+			$date = JFactory::getDate( );
+			$this->datecreated = $date->toMysql( );
+		}
+		
+		$date = JFactory::getDate( );
+		$this->lastmodified = $date->toMysql( );
+		
+		return true;
+	}
 	
 }
