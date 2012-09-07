@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="CACHINGCRON DASHBOARD DEFAULT LAYOUT">
+		<message>
+			<![CDATA[CACHINGCRON DASHBOARD DEFAULT LAYOUT DESC]]>
+		</message>
+	</layout>
+	<state>
+		<name>CACHINGCRON DASHBOARD DEFAULT LAYOUT</name>
+		<description>CACHINGCRON DASHBOARD DEFAULT LAYOUT DESC</description>
+        <!--
+        <url addpath="/administrator/components/com_cachingcron/elements">
+            <param name="filter_group" type="cachingcrongroup" section="com_cachingcron" default="" label="Select Group" description="A Tag Group" />
+            <param name="task" type="hidden" section="com_cachingcron" default="view" />
+        </url>
+        -->
+	</state>
+</metadata>
